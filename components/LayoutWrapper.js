@@ -6,8 +6,10 @@ import SectionContainer from './SectionContainer'
 import Footer from './Footer'
 import MobileNav from './MobileNav'
 import ThemeSwitch from './ThemeSwitch'
+import { useRouter } from 'next/router'
 
 const LayoutWrapper = ({ children }) => {
+  const router = useRouter()
   return (
     <SectionContainer>
       <div className="flex h-screen flex-col justify-between">
@@ -30,15 +32,22 @@ const LayoutWrapper = ({ children }) => {
           </div>
           <div className="flex items-center text-base leading-5">
             <div className="hidden sm:block">
-              {headerNavLinks.map((link) => (
-                <Link
-                  key={link.title}
-                  href={link.href}
-                  className="cursor-pointer rounded-md p-1 px-4 py-[0.10rem] text-xl font-medium text-gray-900 text-gray-200 duration-100 hover:bg-zinc-800 dark:text-gray-100 sm:p-2"
-                >
-                  {link.title}
-                </Link>
-              ))}
+              {headerNavLinks.map((link) => {
+                const isActive = router.asPath === link.href
+                return (
+                  <Link
+                    key={link.title}
+                    href={link.href}
+                    className={
+                      isActive
+                        ? 'cursor-pointer rounded-md p-1 px-4 py-[0.10rem] text-xl font-medium text-gray-300 duration-100 hover:bg-zinc-100 dark:text-gray-100 dark:hover:bg-zinc-800 sm:p-2'
+                        : 'cursor-pointer rounded-md p-1 px-4 py-[0.10rem] text-xl font-bold text-gray-500 duration-100 hover:bg-zinc-100 dark:text-gray-100 dark:hover:bg-zinc-800 sm:p-2'
+                    }
+                  >
+                    {link.title}
+                  </Link>
+                )
+              })}
             </div>
             <ThemeSwitch />
             <MobileNav />
