@@ -7,6 +7,7 @@ import Footer from './Footer'
 import MobileNav from './MobileNav'
 import ThemeSwitch from './ThemeSwitch'
 import { useRouter } from 'next/router'
+import Typewriter from 'typewriter-effect'
 
 const LayoutWrapper = ({ children }) => {
   const router = useRouter()
@@ -15,18 +16,16 @@ const LayoutWrapper = ({ children }) => {
       <div className="flex h-screen flex-col justify-between">
         <header className="flex items-center justify-between py-10">
           <div>
-            <Link href="/" aria-label={siteMetadata.headerTitle}>
-              <div className="flex items-center justify-between">
-                <div className="mr-3">
-                  <Logo />
-                </div>
-                {typeof siteMetadata.headerTitle === 'string' ? (
-                  <div className="hidden h-6 text-2xl font-semibold sm:block">
-                    {siteMetadata.headerTitle}
-                  </div>
-                ) : (
-                  siteMetadata.headerTitle
-                )}
+            <Link href="/" aria-label="Hubert Wasier website">
+              <div className="text-normal text-primary-color dark:text-primary-color-dark flex items-center justify-between font-semibold">
+                {`~${router.asPath}`}{' '}
+                <Typewriter
+                  options={{
+                    strings: [],
+                    autoStart: true,
+                    loop: true,
+                  }}
+                />
               </div>
             </Link>
           </div>
@@ -40,8 +39,8 @@ const LayoutWrapper = ({ children }) => {
                     href={link.href}
                     className={
                       isActive
-                        ? 'cursor-pointer rounded-md p-1 px-4 py-[0.10rem] text-xl font-medium text-gray-300 duration-100 hover:bg-zinc-100 dark:text-gray-100 dark:hover:bg-zinc-800 sm:p-2'
-                        : 'cursor-pointer rounded-md p-1 px-4 py-[0.10rem] text-xl font-bold text-gray-500 duration-100 hover:bg-zinc-100 dark:text-gray-100 dark:hover:bg-zinc-800 sm:p-2'
+                        ? 'cursor-pointer rounded-md p-1 px-4 py-[0.10rem] font-semibold font-medium text-gray-800 duration-100 hover:bg-zinc-100 dark:text-gray-100 dark:hover:bg-zinc-800 sm:p-2'
+                        : 'cursor-pointer rounded-md p-1 px-4 py-[0.10rem] font-normal font-bold text-gray-600 duration-100 hover:bg-zinc-100 dark:text-gray-100 dark:hover:bg-zinc-800 sm:p-2'
                     }
                   >
                     {link.title}

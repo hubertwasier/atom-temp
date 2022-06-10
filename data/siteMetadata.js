@@ -1,7 +1,7 @@
 const siteMetadata = {
   title: 'Atom, développement web à la Réunion 🇷🇪',
   author: 'Hubert Wasier',
-  headerTitle: 'Hubert Wasier',
+  headerTitle: '',
   description: 'Développeur Web à la Réunion',
   language: 'fr',
   theme: 'system', // system, dark or light
@@ -10,13 +10,13 @@ const siteMetadata = {
   siteLogo: '/static/images/logo.png',
   image: '/static/images/avatar.png',
   socialBanner: '/static/images/twitter-card.png',
-  email: 'address@yoursite.com',
-  github: 'https://github.com',
-  twitter: 'https://twitter.com/Twitter',
-  facebook: 'https://facebook.com',
+  email: 'hubert@atom-dev.io',
+  github: 'https://github.com/hubertwasier',
+  twitter: 'https://twitter.com/atom_hubert',
+  facebook: 'https://www.facebook.com/profile.php?id=100081632407587',
   youtube: 'https://youtube.com',
-  linkedin: 'https://www.linkedin.com',
-  locale: 'en-US',
+  linkedin: 'https://www.linkedin.com/in/hubert-wasier-1339434/',
+  locale: 'fr',
   analytics: {
     // If you want to use an analytics provider you have to add it to the
     // content security policy in the `next.config.js` file.
