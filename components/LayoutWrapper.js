@@ -17,7 +17,7 @@ const LayoutWrapper = ({ children }) => {
         <header className="flex items-center justify-between py-10">
           <div>
             <Link href="/" aria-label="Hubert Wasier website">
-              <div className="text-normal text-primary-color dark:text-primary-color-dark flex items-center justify-between font-semibold">
+              <div className="text-primary-color-300 dark:text-primary-color flex items-center justify-between font-semibold">
                 {`~${router.asPath}`}{' '}
                 <Typewriter
                   options={{
