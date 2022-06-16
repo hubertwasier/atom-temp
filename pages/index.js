@@ -48,7 +48,7 @@ export default function Home({ posts }) {
           </h2>
           <Link href="/contact">
             <a className="btn btn-primary mt-8 flex rounded-lg bg-primary-500 px-3 py-2 font-semibold text-white transition-all hover:scale-125 dark:hover:text-gray-200">
-              Allons y
+              Allons y!
             </a>
           </Link>
         </div>

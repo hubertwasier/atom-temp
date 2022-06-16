@@ -1,21 +1,22 @@
-import { MDXLayoutRenderer } from '@/components/MDXComponents'
-import { getFileBySlug } from '@/lib/mdx'
+import siteMetadata from '@/data/siteMetadata'
+import projectsData from '@/data/projectsData'
+import Card from '@/components/Card'
+import { PageSEO } from '@/components/SEO'
 
-const DEFAULT_LAYOUT = 'AuthorLayout'
-
-export async function getStaticProps() {
-  const authorDetails = await getFileBySlug('authors', ['default'])
-  return { props: { authorDetails } }
-}
-
-export default function Offres({ authorDetails }) {
-  const { mdxSource, frontMatter } = authorDetails
-
+export default function Offres() {
   return (
-    <MDXLayoutRenderer
-      layout={frontMatter.layout || DEFAULT_LAYOUT}
-      mdxSource={mdxSource}
-      frontMatter={frontMatter}
-    />
+    <>
+      <PageSEO
+        title={`Nos offres - ${siteMetadata.author}`}
+        description={siteMetadata.description}
+      />
+      <div className="divide-y divide-gray-200 dark:divide-gray-700">
+        <div className="space-y-2 pt-6 pb-8 md:space-y-5">
+          <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
+            Nos offres
+          </h1>
+        </div>
+      </div>
+    </>
   )
 }
