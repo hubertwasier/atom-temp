@@ -1,33 +1,56 @@
-import siteMetadata from '@/data/siteMetadata'
-import projectsData from '@/data/projectsData'
-import Card from '@/components/Card'
+import Link from '@/components/Link'
 import { PageSEO } from '@/components/SEO'
+import Tag from '@/components/Tag'
+import siteMetadata from '@/data/siteMetadata'
+import { getAllFilesFrontMatter } from '@/lib/mdx'
+import formatDate from '@/lib/utils/formatDate'
+import Image from 'next/image'
 
-export default function Home() {
+import NewsletterForm from '@/components/NewsletterForm'
+import Button from '@/components/Button'
+
+const MAX_DISPLAY = 5
+
+export async function getStaticProps() {
+  const posts = await getAllFilesFrontMatter('blog')
+
+  return { props: { posts } }
+}
+
+export default function Home({ posts }) {
   return (
     <>
-      <PageSEO title={`Projects - ${siteMetadata.author}`} description={siteMetadata.description} />
-      <div className="divide-y divide-gray-200 dark:divide-gray-700">
-        <div className="space-y-2 pt-6 pb-8 md:space-y-5">
-          <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
-            Hubert Wasier
-          </h1>
-          <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
-            Showcase your projects with a hero image (16 x 9)
-          </p>
-        </div>
-        <div className="container py-12">
-          <div className="-m-4 flex flex-wrap">
-            {projectsData.map((d) => (
-              <Card
-                key={d.title}
-                title={d.title}
-                description={d.description}
-                imgSrc={d.imgSrc}
-                href={d.href}
-              />
-            ))}
+      <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
+      <div className="divide-y divide-gray-200 ">
+        <div className="flex flex-nowrap items-start justify-between space-y-2 xl:gap-x-8 xl:space-y-0">
+          <div className="max-w-none space-y-2 pt-6 pb-8 pt-8 pb-8 dark:prose-dark md:space-y-5 xl:col-span-2">
+            <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
+              {siteMetadata.author}
+            </h1>
+            <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
+              {siteMetadata.description}
+            </p>
           </div>
+          <div className="flex flex-col items-center pt-8">
+            <Image
+              src={siteMetadata.image}
+              alt={`avatar de ${siteMetadata.author}`}
+              width="120px"
+              height="120px"
+              className="h-48 w-48 rounded-full "
+            />
+          </div>
+        </div>
+        <div className="flex flex-col items-start items-center space-y-2 py-8 text-center">
+          <p className="pt-4 text-2xl font-semibold">Design. Développe. Améliore</p>
+          <h2 className="leading-16 max-w-3xl pt-4 text-6xl font-bold">
+            Je crée les magnifiques sites Web que vos clients vont adorer
+          </h2>
+          <Link href="/contact">
+            <a className="btn btn-primary mt-8 flex rounded-lg bg-primary-500 px-3 py-2 font-semibold text-white transition-all hover:scale-125 dark:hover:text-gray-200">
+              Allons y
+            </a>
+          </Link>
         </div>
       </div>
     </>

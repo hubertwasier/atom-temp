@@ -2,13 +2,13 @@ const siteMetadata = {
   title: 'Atom, développement web à la Réunion 🇷🇪',
   author: 'Hubert Wasier',
   headerTitle: '',
-  description: 'Développeur Web à la Réunion',
+  description: 'Développeur Web à la Réunion 🇷🇪',
   language: 'fr',
   theme: 'system', // system, dark or light
   siteUrl: 'https://atom-dev.io',
   siteRepo: 'https://github.com/timlrx/tailwind-nextjs-starter-blog',
   siteLogo: '/static/images/logo.png',
-  image: '/static/images/avatar.png',
+  image: '/static/images/hubert.jpg',
   socialBanner: '/static/images/twitter-card.png',
   email: 'hubert@atom-dev.io',
   github: 'https://github.com/hubertwasier',
@@ -16,6 +16,7 @@ const siteMetadata = {
   facebook: 'https://www.facebook.com/profile.php?id=100081632407587',
   youtube: 'https://youtube.com',
   linkedin: 'https://www.linkedin.com/in/hubert-wasier-1339434/',
+  instagram: 'https://www.instagram.com/atom_dev_io/',
   locale: 'fr',
   analytics: {
     // If you want to use an analytics provider you have to add it to the

@@ -41,6 +41,8 @@ module.exports = {
                 color: `${theme('colors.primary.600')} !important`,
               },
               code: { color: theme('colors.primary.400') },
+              fontStyle: 'normal',
+              textDecoration: 'none',
             },
             h1: {
               fontWeight: '700',
