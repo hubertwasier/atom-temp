@@ -5,6 +5,8 @@ import siteMetadata from '@/data/siteMetadata'
 import { getAllFilesFrontMatter } from '@/lib/mdx'
 import formatDate from '@/lib/utils/formatDate'
 import Image from 'next/image'
+import { gsap } from 'gsap'
+import React, { useRef, useEffect } from 'react'
 
 import NewsletterForm from '@/components/NewsletterForm'
 import Button from '@/components/Button'
@@ -18,6 +20,18 @@ export async function getStaticProps() {
 }
 
 export default function Home({ posts }) {
+  // store a reference to the box div
+  const boxRef = useRef()
+
+  // wait until DOM has been rendered
+  useEffect(() => {
+    gsap.to(boxRef.current, {
+      rotation: '+=360',
+      repeat: -1,
+      repeatDelay: 1,
+      yoyo: true,
+    })
+  })
   return (
     <>
       <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
@@ -31,7 +45,7 @@ export default function Home({ posts }) {
               {siteMetadata.description}
             </p>
           </div>
-          <div className="flex flex-col items-center pt-8">
+          <div className="flex flex-col items-center pt-8" ref={boxRef}>
             <Image
               src={siteMetadata.image}
               alt={`avatar de ${siteMetadata.author}`}
