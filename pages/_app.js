@@ -12,6 +12,7 @@ import Analytics from '@/components/analytics'
 import LayoutWrapper from '@/components/LayoutWrapper'
 import { ClientReload } from '@/components/ClientReload'
 import Script from 'next/script'
+import { GoogleAnalytics } from 'nextjs-google-analytics'
 
 const isDevelopment = process.env.NODE_ENV === 'development'
 const isSocket = process.env.SOCKET
@@ -19,6 +20,7 @@ const isSocket = process.env.SOCKET
 export default function App({ Component, pageProps }) {
   return (
     <ThemeProvider attribute="class" defaultTheme={siteMetadata.theme}>
+      <GoogleAnalytics />
       <Script
         id="googletagmanager"
         strategy="lazyOnload"
@@ -28,7 +30,7 @@ export default function App({ Component, pageProps }) {
       <Script id="dataLayer" strategy="lazyOnload">
         {`
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments)};
+        function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', {
         page_path: window.location.pathname,
