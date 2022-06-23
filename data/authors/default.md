@@ -9,9 +9,10 @@ linkedin: https://www.linkedin.com/in/hubert-wasier-1339434/
 github: https://github.com/hubertwasier
 instagram: https://www.instagram.com/atom_dev_io/
 facebook: https://www.facebook.com/profile.php?id=100081632407587
+layout: AboutLayout
 ---
 
-Hubert Wasier est un développeur d'applications web et mobile. Ce site est actuellement en construction, n'hésitez pas à m'envoyer un message pour me faire part de votre projet de création ou de refonte web.<br /> A bientôt, na r'trouv!
+Je suis Hubert Wasier, **développeur de sites web**, d'applications web et mobile. <br /> A bientôt, na r'trouv!
 
 ![computer working desk](/static/images/annie-spratt-wgivdx9dBdQ-unsplash.jpeg 'Computer World')
 
