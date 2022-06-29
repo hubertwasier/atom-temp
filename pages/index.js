@@ -49,10 +49,10 @@ export default function Home({ posts }) {
                 Votre présence en ligne est primordiale,
                 <br />
               </span>
-              <span className="max-w-5xl text-2xl leading-3">
-                N'attendez plus pour créer le site dont vous rêvez et que vos clients adoreront!
-              </span>
             </h2>
+            <span className="pt-4 text-2xl leading-3">
+              N'attendez plus pour créer le site dont vous rêvez et que vos clients adoreront!
+            </span>
           </div>
 
           <div className="flex justify-center space-y-2">

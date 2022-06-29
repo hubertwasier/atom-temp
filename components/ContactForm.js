@@ -1,6 +1,12 @@
 export default function ContactForm() {
   return (
-    <form name="contact" action="/success" method="POST" data-netlify="true">
+    <form
+      name="contact"
+      action="/success"
+      method="POST"
+      data-netlify="true"
+      className="text-gray-900"
+    >
       <input type="hidden" name="form-name" value="contact" />
       <p>
         <input type="text" name="firstname" id="firstname" />
