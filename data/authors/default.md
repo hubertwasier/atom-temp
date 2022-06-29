@@ -1,6 +1,6 @@
 ---
 name: Hubert Wasier
-avatar: /static/images/hubert.jpg
+avatar: /static/images/avatar-3.jpg
 occupation: Développeur chez atom
 company: atom websites & designs
 email: hubert@atom-dev.io

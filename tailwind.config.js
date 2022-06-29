@@ -28,6 +28,7 @@ module.exports = {
         sans: ['InterVariable', ...defaultTheme.fontFamily.sans],
       },
       colors: {
+        atom: '##f0047e',
         primary: colors.pink,
         gray: colors.neutral,
       },

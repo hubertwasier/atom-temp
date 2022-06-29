@@ -8,7 +8,7 @@ const siteMetadata = {
   siteUrl: 'https://atom-dev.io',
   siteRepo: 'https://github.com/timlrx/tailwind-nextjs-starter-blog',
   siteLogo: '/static/images/logo.png',
-  image: '/static/images/hubert.jpg',
+  image: '/static/images/avatar-3.jpg',
   socialBanner: '/static/images/twitter-card.png',
   email: 'hubert@atom-dev.io',
   github: 'https://github.com/hubertwasier',
