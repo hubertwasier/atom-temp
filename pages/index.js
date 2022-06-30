@@ -8,6 +8,8 @@ import Image from 'next/image'
 
 import NewsletterForm from '@/components/NewsletterForm'
 import Button from '@/components/Button'
+import Testimonials from '@/components/Testimonials'
+import testiData from '@/data/testiData'
 
 const MAX_DISPLAY = 5
 
@@ -46,21 +48,33 @@ export default function Home({ posts }) {
             <p className="pt-4 text-2xl font-semibold">Design. Build. Improve.</p>
             <h2 className="max-w-3xl pt-4 text-6xl font-bold ">
               <span className="leading-snug">
-                Votre présence en ligne est primordiale,
+                Votre présence en ligne est primordiale ->
                 <br />
               </span>
             </h2>
-            <span className="pt-4 text-2xl leading-3">
+            <span className="pt-4 text-2xl leading-8">
               N'attendez plus pour créer le site dont vous rêvez et que vos clients adoreront!
             </span>
           </div>
 
-          <div className="flex justify-center space-y-2">
+          <div className="flex justify-center py-4">
             <Link href="/contact">
-              <a className="btn btn-primary mt-8 flex rounded-lg bg-primary-500 px-3 py-2 text-2xl font-semibold text-white transition-all hover:scale-125 dark:hover:text-gray-200">
+              <a className="btn btn-primary flex rounded-lg bg-primary-500 px-3 py-2 text-2xl font-semibold text-white transition-all hover:scale-125 dark:hover:text-gray-200">
                 Allons y!
               </a>
             </Link>
+          </div>
+          <div className="masonry sm:masonry-sm xl:masonry-lg space-y-6 py-8">
+            {testiData.map((d) => (
+              <Testimonials
+                key={d.clientCompany}
+                clientCompany={d.clientCompany}
+                description={d.description}
+                href={d.href}
+                imgSrc={d.imgSrc}
+                clientName={d.clientName}
+              />
+            ))}
           </div>
         </div>
       </div>
