@@ -23,7 +23,7 @@ export default function Home({ posts }) {
   return (
     <>
       <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
-      <div className="divide-y divide-gray-200 ">
+      <div className="divide-y divide-gray-200">
         <div className="flex flex-nowrap items-start justify-between space-y-2 xl:gap-x-8 xl:space-y-0">
           <div className="max-w-none space-y-2 pt-6 pb-8 pt-8 pb-8 dark:prose-dark md:space-y-5 xl:col-span-2">
             <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
@@ -43,7 +43,7 @@ export default function Home({ posts }) {
             />
           </div>
         </div>
-        <div>
+        <div className="pb-8">
           <div className="flex flex-col items-start space-y-2 py-8">
             <p className="pt-4 text-2xl font-semibold">Design. Build. Improve.</p>
             <h2 className="max-w-3xl pt-4 text-6xl font-bold ">
@@ -56,7 +56,6 @@ export default function Home({ posts }) {
               N'attendez plus pour créer le site dont vous rêvez et que vos clients adoreront!
             </span>
           </div>
-
           <div className="flex justify-center py-4">
             <Link href="/contact">
               <a className="btn btn-primary flex rounded-lg bg-primary-500 px-3 py-2 text-2xl font-semibold text-white transition-all hover:scale-125 dark:hover:text-gray-200">
@@ -64,7 +63,31 @@ export default function Home({ posts }) {
               </a>
             </Link>
           </div>
-          <div className="masonry sm:masonry-sm xl:masonry-lg space-y-6 py-8">
+        </div>
+        <div className="flex flex-col py-8">
+          <h2 className="m-4 text-center text-4xl font-semibold">Mes domaines de compétence</h2>
+          <div>
+            <p className="pt-4 text-2xl font-semibold">Création de sites Web.</p>
+            <p>Site vitrine - Corporate - Association - E-commerce</p>
+          </div>
+          <div className="mt-4 place-self-end">
+            <p className="pt-4 text-2xl font-semibold">Développeur Informatique Indépendant.</p>
+            <p className="text-right">Ouvert à tous projets de collaboration</p>
+          </div>
+          <div className="mt-4">
+            <p className="pt-4 text-2xl font-semibold">Web Design & Travaux graphique.</p>
+          </div>
+          <div className="mt-8 flex justify-center py-4">
+            <Link href="/services">
+              <a className="btn btn-primary flex rounded-lg bg-primary-500 px-3 py-2 text-2xl font-semibold text-white transition-all hover:scale-125 dark:hover:text-gray-200">
+                Retrouvez mes services
+              </a>
+            </Link>
+          </div>
+        </div>
+        <div className="py-8">
+          <h2 className="m-4 text-center text-4xl font-semibold">Ils m'ont fait confiance...</h2>
+          <div className="masonry sm:masonry-sm xl:masonry-xl space-y-6 py-8">
             {testiData.map((d) => (
               <Testimonials
                 key={d.clientCompany}
